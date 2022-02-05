@@ -1,0 +1,41 @@
+<mat-card>
+    <!-- ! Div Start -->
+    <div class="login-form-div">
+        <!-- * Form -->
+        <!-- ? Form Start -->
+        <form class="example-form" [formGroup]="login">
+            <!-- * Email input (with validation) -->
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input    type="email" matInput 
+                          formControlName="email"
+                          [errorStateMatcher]="matcher"
+                          placeholder="Ex. biggus@dickus.com"
+                          >
+                <mat-error *ngIf="login?.get('email')?.hasError('email') && !login?.get('email')?.hasError('required')">
+                    Please enter a valid email
+                </mat-error>
+                <mat-error *ngIf="login?.get('email')?.hasError('required')">
+                    Email is required
+                </mat-error>
+            </mat-form-field>
+
+            <!-- * Password input -->
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher"
+                       placeholder="Password"
+                       [type]="hide ? 'password' : 'text'" >
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+        </form>
+        <!-- ? Form End -->
+
+        <!-- * Submit button -->
+        <button mat-raised-button class="form-submit" color="primary" type="submit" [disabled]="!login.valid">Login</button>
+
+        <!-- * Return to home -->
+        <button mat-raised-button class="form-submit" color="primary" (click)="goHome()">Cancel</button>
+    </div>
+    <!-- ! Div End -->
+</mat-card>
