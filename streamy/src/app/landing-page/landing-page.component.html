@@ -1,8 +1,14 @@
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
     <span class="example-spacer"></span>
     <span>Streamy</span>
     <span class="example-spacer"></span>
+
+    <div class="button-group">
+      <span>
+        <button mat-flat-button color="primary" (click)="goLogin()">Login</button>
+      </span>
+      <span>
+        <button mat-flat-button color="primary" (click)="goRegister()">Register</button>
+      </span>
+    </div>
   </mat-toolbar>

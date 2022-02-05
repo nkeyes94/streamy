@@ -1,0 +1,18 @@
+.example-form {
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .registration-form-div {
+    justify-content: center;
+  }
+
+  .form-submit {
+        justify-content: center;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+  }
