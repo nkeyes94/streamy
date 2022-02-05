@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MatCardModule } from '@angular/material/card'; 
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list'; 
 
 // * Application importing (Component, Service, Pipe)
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { MusicPlayerComponent } from './music-player/music-player.component';
 
 // * Now, I need to create an array to hold route definitions.
 const routes: Routes = [
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },                       // ? Fallback route
   { path: 'login', component: LoginComponent },                               // ? Login page
   { path: 'register', component: RegisterComponent },                         // ? Register page
+  { path: 'music-player', component: MusicPlayerComponent },                  // ? Music player page
 ];
 
 @NgModule({
@@ -34,7 +37,8 @@ const routes: Routes = [
     LandingPageComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MusicPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
